@@ -1,0 +1,11 @@
+{
+  "name": "battleships",
+  "version": "1.0.0",
+  "description": "A little command line battleships game",
+  "main": "src/battleships.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Alexander Mason",
+  "license": "ISC"
+}
