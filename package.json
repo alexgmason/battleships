@@ -10,8 +10,6 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-coverage": "^0.3.36",
-    "gulp-istanbul": "^0.10.0",
     "gulp-jasmine": "^2.0.1",
     "gulp-jshint": "^1.11.2",
     "gulp-watch": "^4.2.4",
