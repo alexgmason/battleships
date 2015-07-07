@@ -43,6 +43,11 @@ module.exports = function(gridSize, shipBlueprint){
       else if (isNaN(coordinates.charAt(1))){
         return false;
       }
+      //Check the second character isn't '0', which is an invalid number as our
+      //grid goes 0-10
+      else if(parseInt(coordinates.charAt(1)) === 0){
+        return false;
+      }
 
       //If there is a third character. For example 'A10' then test that too
       //Only Valid character is 0;
