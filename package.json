@@ -18,6 +18,7 @@
     "jshint-stylish": "^2.0.1"
   },
   "dependencies": {
-    "stdio": "^0.2.7"
+    "stdio": "^0.2.7",
+    "underscore": "^1.8.3"
   }
 }
