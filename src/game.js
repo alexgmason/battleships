@@ -15,7 +15,8 @@ module.exports = function(gridSize, shipBlueprint){
     convertCoordinatesToIndex: function(coordinates){
       var xValue = coordinates.split('')[0].toLowerCase();
       var xIndex = parseInt(this.board.getValidXAxisLetters().indexOf(xValue));
-      var yIndex = parseInt(coordinates.split('')[1]);
+      //Subtract one as we want to convert to zero based numbering
+      var yIndex = parseInt(coordinates.split('')[1]) -1;
 
       return [xIndex, yIndex];
     },

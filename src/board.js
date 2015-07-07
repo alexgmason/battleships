@@ -30,6 +30,7 @@ module.exports = function(gridSize, shipBlueprints){
     attemptToPositionShip: function(size){
       //First choose a random location on the grid
       var startLocation = this.getRandomLocation();
+      console.log('startLocation', startLocation);
       var orientation = this.getRandomOrientation();
       var coordinates = [];
       if(orientation === 'horizontal'){

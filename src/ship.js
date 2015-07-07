@@ -7,7 +7,6 @@ module.exports = function(shipData){
       this.hitCount = 0;
       this.sunk = false;
 
-      console.log('this.coordinates', this.coordinates);
       return this;
     },
     recordDamage: function(){
