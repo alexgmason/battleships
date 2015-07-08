@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for spec/board-spec.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">spec/board-spec.js</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(56 / 56)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(2 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(11 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(56 / 56)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">spec/</a> &#187; board-spec.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var Board = require('../src/board.js');
+&nbsp;
+describe('A one sided game of Battleships board that is responsible for creating/positioning ships and keeping track of their positions on the board', function(){
+  var coordinates;
+  var board;
+&nbsp;
+  var GRIDSIZE = 10;
+  var SHIPSIZE = 5;
+  var shipBlueprint = [
+    { type: 'Battleship',
+      size: SHIPSIZE,
+    }
+  ];
+&nbsp;
+  beforeEach(function(){
+    coordinates = false;
+    board = new Board(GRIDSIZE, shipBlueprint).init();
+  });
+&nbsp;
+  it('Given a ship blueprint, should instantiate the ship and add it to the ships array', function(){
+    expect(board.ships.length).toEqual(1);
+    board.addNewShip(shipBlueprint);
+    expect(board.ships.length).toEqual(2);
+  });
+&nbsp;
+  it('Should position a given ship. and return an array of coordinates of passed in size', function(){
+    while(!coordinates){
+      coordinates = board.attemptToPositionShip(SHIPSIZE);
+    }
+    expect(coordinates.length).toEqual(SHIPSIZE);
+  });
+&nbsp;
+  it('Given an empty board and a shot at a specific location, that same position should return the correct shot data', function(){
+    var shotCoordinates = [3, 4];
+    var expectedHitData = {
+      coordinates: [3 ,4],
+      hit: false
+    };
+&nbsp;
+    board.recordShot(shotCoordinates);
+&nbsp;
+    expect(board.getPreviousShotDataForPosition(shotCoordinates)).toEqual(expectedHitData);
+  });
+  it('A recorded shot should be added to the shots array', function(){
+    var existingShots = board.shots.length;
+    board.recordShot([1, 0]);
+    expect(board.shots.length).toEqual(existingShots + 1);
+  });
+&nbsp;
+  it('Given a ship placed on the board and a shot recorded at that position, given that same position should return the correct shot data', function(){
+    shotCoordinates = board.ships[0].coordinates[0];
+    var expectedHitData = {
+      coordinates: shotCoordinates,
+      hit: true
+    };
+&nbsp;
+    board.recordShot(shotCoordinates, board.ships[0]);
+&nbsp;
+    expect(board.getPreviousShotDataForPosition(shotCoordinates)).toEqual(expectedHitData);
+  });
+&nbsp;
+  it('Given an empty board. A check to see if a ship is at a given location should be undefined', function(){
+    board.init();
+&nbsp;
+    var coordinateToCheck = [0,5];
+    var shipIsAtPosition = board.checkIfShipIsAtPosition(coordinateToCheck);
+    expect(shipIsAtPosition).toEqual(undefined);
+  });
+&nbsp;
+  it('Given a ship positioned on the board, then given a coordinate at that ships location. A check to see if a ship is at that location should return that ship', function(){
+    board.init();
+&nbsp;
+    while(!coordinates){
+      coordinates = board.attemptToPositionShip(SHIPSIZE);
+    }
+&nbsp;
+    board.ships[0] = {
+      coordinates: coordinates
+    };
+&nbsp;
+    var coordinateToCheck = coordinates[0];
+    var shipIsAtPosition = board.checkIfShipIsAtPosition(coordinateToCheck);
+    expect(shipIsAtPosition).toEqual(board.ships[0]);
+  });
+&nbsp;
+  it('Returns random orientation in a valid format', function(){
+    var orientation = board.getRandomOrientation();
+&nbsp;
+    var orientationIsValid = orientation === 'horizontal' || orientation === 'vertical';
+    expect(orientationIsValid).toBeTruthy();
+  });
+&nbsp;
+  it('Returns random coordinates in a valid format', function(){
+    var coordinates = board.getRandomLocation();
+&nbsp;
+    expect(coordinates.length).toBe(2);
+&nbsp;
+    var firstCoordinateIsLessThanEqualToGridSize = coordinates[0] &lt;= GRIDSIZE;
+    var secondCoordinateIsLessThanEqualToGridSize = coordinates[1] &lt;= GRIDSIZE;
+&nbsp;
+    expect(firstCoordinateIsLessThanEqualToGridSize).toBeTruthy();
+    expect(secondCoordinateIsLessThanEqualToGridSize).toBeTruthy();
+  });
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jul 08 2015 19:38:11 GMT+0100 (BST)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
