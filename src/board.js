@@ -95,7 +95,7 @@ module.exports = function(gridSize, shipBlueprints){
       return 'vertical';
     },
     checkIfShipIsAtPosition: function(targetCoordinates){
-      return _.some(this.ships, function(ship){
+      return _.find(this.ships, function(ship){
         return _.some(ship.coordinates, function(coordinate){
           if(targetCoordinates[0] === coordinate[0] && targetCoordinates[1] === coordinate[1]){
             return true;

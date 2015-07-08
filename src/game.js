@@ -115,7 +115,7 @@ module.exports = function(gridSize, shipBlueprint){
         shipAtPosition.recordDamage(coordinates);
 
         if(this.checkForEndOfGame()){
-          console.log('You have sunk all the enemy ships! It took you' + this.board.shots.length + ' attempts');
+          console.log('You Win!!! You have sunk all the enemy ships! It took you' + this.board.shots.length + ' attempts');
           this.exitGame();
         }
       }
