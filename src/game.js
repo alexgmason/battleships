@@ -10,7 +10,7 @@ module.exports = function(gridSize, shipBlueprint){
       this.gridSize = gridSize;
       this.board = new Board(gridSize, shipBlueprint).init();
 
-      this.requestShot();
+      return this;
     },
     //Converts the users inputted coordinates that are in a traditional battleship 'A1'
     //Format into the indexes of an array.
@@ -67,7 +67,7 @@ module.exports = function(gridSize, shipBlueprint){
       stdio.question('Set your coordinates', function (error, input) {
         var indexedCoordinates;
         if(error){
-          console.log('There was an error', error);
+          console.log('There was an error retrying...', error);
           this.requestShot();
         }
 

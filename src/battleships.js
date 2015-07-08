@@ -21,4 +21,6 @@ var Game = require('./game.js');
   ];
 
   var game = new Game(BOARDSIZE, SHIPS).init();
+
+  game.requestShot();
 })();
