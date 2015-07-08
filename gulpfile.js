@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var watch = require('gulp-watch');
 var jshint = require('gulp-jshint');
 var jasmine = require('gulp-jasmine');
 
