@@ -13,6 +13,7 @@
     "gulp-jasmine": "^2.0.1",
     "gulp-jshint": "^1.11.2",
     "gulp-watch": "^4.2.4",
+    "jasmine": "^2.3.1",
     "jshint-stylish": "^2.0.1"
   },
   "dependencies": {
