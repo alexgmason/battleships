@@ -97,14 +97,4 @@ describe('A one sided game of Battleships board that is responsible for creating
     expect(firstCoordinateIsLessThanEqualToGridSize).toBeTruthy();
     expect(secondCoordinateIsLessThanEqualToGridSize).toBeTruthy();
   });
-
 });
-//Grid input out of bounds should be reported
-
-//A cell that has been targeted cannot be targeted again
-
-//A cell with no ship returns 'no hit'
-//A cell with a ship returns 'hit' & hit is recorded
-
-//A Ships last remaining cell sinks the battleship and removes it from the board
-//A board with all ships sank completes the game
