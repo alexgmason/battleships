@@ -1,6 +1,6 @@
 # A one sided game of Battleships
 
-[![Build Status](https://travis-ci.org/alexgmason/battleships.svg?branch=master)](https://travis-ci.org/alexgmason/battleships)
+[![Build Status](https://travis-ci.org/alexgmason/battleships.svg?branch=master)](https://travis-ci.org/alexgmason/battleships) [![Code Climate](https://codeclimate.com/github/alexgmason/battleships/badges/gpa.svg)](https://codeclimate.com/github/alexgmason/battleships)[![Test Coverage](https://codeclimate.com/github/alexgmason/battleships/badges/coverage.svg)](https://codeclimate.com/github/alexgmason/battleships/coverage)
 ##To Run..
 1. from the project root directory run npm install
 2. cd into the src folder
