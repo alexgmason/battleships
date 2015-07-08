@@ -63,7 +63,7 @@ describe('A one sided game of Battleships board that is responsible for creating
     board.init();
 
     var coordinateToCheck = [0,5];
-    var shipIsAtPosition = board.checkIfShipIsAtPosition(coordinateToCheck);
+    var shipIsAtPosition = board.getShipAtPosition(coordinateToCheck);
     expect(shipIsAtPosition).toEqual(undefined);
   });
 
@@ -79,7 +79,7 @@ describe('A one sided game of Battleships board that is responsible for creating
     };
 
     var coordinateToCheck = coordinates[0];
-    var shipIsAtPosition = board.checkIfShipIsAtPosition(coordinateToCheck);
+    var shipIsAtPosition = board.getShipAtPosition(coordinateToCheck);
     expect(shipIsAtPosition).toEqual(board.ships[0]);
   });
 

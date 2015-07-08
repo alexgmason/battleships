@@ -93,7 +93,7 @@ module.exports = function(gridSize, shipBlueprint){
     fire: function(coordinates){
       //Returns false if no data
       var previousShot = this.board.getPreviousShotDataForPosition(coordinates);
-      var shipAtPosition = this.board.checkIfShipIsAtPosition(coordinates);
+      var shipAtPosition = this.board.getShipAtPosition(coordinates);
 
       if(previousShot){
         if(previousShot.hit === true){

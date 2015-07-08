@@ -39,7 +39,7 @@ module.exports = function(gridSize, shipBlueprints){
         //else we are going to check each position for another ship!
         else{
           for(var i = 0; i < size; i++){
-            if(this.checkIfShipIsAtPosition([startLocation[0] + i, startLocation[1]])){
+            if(this.getShipAtPosition([startLocation[0] + i, startLocation[1]])){
               return false;
             }
             //Push the valid coordinate onto the array
@@ -57,7 +57,7 @@ module.exports = function(gridSize, shipBlueprints){
         //else we are going to check each intended position for clash with another ship!
         else{
           for(var j = 0; j < size; j++){
-            if(this.checkIfShipIsAtPosition([startLocation[0], startLocation[1] + j])){
+            if(this.getShipAtPosition([startLocation[0], startLocation[1] + j])){
               return false;
             }
             //Push the valid coordinate onto the array
@@ -94,7 +94,7 @@ module.exports = function(gridSize, shipBlueprints){
       }
       return 'vertical';
     },
-    checkIfShipIsAtPosition: function(targetCoordinates){
+    getShipAtPosition: function(targetCoordinates){
       return _.find(this.ships, function(ship){
         return _.some(ship.coordinates, function(coordinate){
           if(targetCoordinates[0] === coordinate[0] && targetCoordinates[1] === coordinate[1]){
