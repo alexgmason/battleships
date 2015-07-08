@@ -11,7 +11,7 @@ module.exports = function(gridSize, shipBlueprints){
       this.shots = [];
 
       //Add the ships
-      for(i = 0; i < shipBlueprints.length; i++){
+      for(var i = 0; i < shipBlueprints.length; i++){
         this.addNewShip(shipBlueprints[i]);
       }
       return this;
@@ -25,10 +25,6 @@ module.exports = function(gridSize, shipBlueprints){
       }
       this.ships.push(new Ship(shipBlueprint).init());
     },
-    //Returns an array of alphabetised letters with the length of the grid size
-    getValidXAxisLetters: function(){
-      return 'abcdefghijklmnopqrstuvwxyz'.split('').splice(0, this.gridSize);
-    },
     attemptToPositionShip: function(size){
       //First choose a random location on the grid
       var startLocation = this.getRandomLocation();
@@ -36,7 +32,7 @@ module.exports = function(gridSize, shipBlueprints){
       var coordinates = [];
       if(orientation === 'horizontal'){
         //If the distance between the start position and the edge of the grid is
-        // larger than the ship can accomodate then return
+        //larger than the ship can accomodate then return
         if(startLocation[0] + size > this.gridSize){
           return false;
         }
@@ -60,12 +56,12 @@ module.exports = function(gridSize, shipBlueprints){
         }
         //else we are going to check each intended position for clash with another ship!
         else{
-          for(var i = 0; i < size; i++){
-            if(this.checkIfShipIsAtPosition([startLocation[0], startLocation[1] + i])){
+          for(var j = 0; j < size; j++){
+            if(this.checkIfShipIsAtPosition([startLocation[0], startLocation[1] + j])){
               return false;
             }
             //Push the valid coordinate onto the array
-            coordinates.push([startLocation[0], startLocation[1] + i]);
+            coordinates.push([startLocation[0], startLocation[1] + j]);
           }
           return coordinates;
         }

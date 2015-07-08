@@ -16,11 +16,15 @@ module.exports = function(gridSize, shipBlueprint){
     //Format into the indexes of an array.
     convertCoordinatesToIndex: function(coordinates){
       var xValue = coordinates.split('')[0].toLowerCase();
-      var xIndex = parseInt(this.board.getValidXAxisLetters().indexOf(xValue));
+      var xIndex = parseInt(this.getValidXAxisLetters().indexOf(xValue));
       //Subtract one as we want to convert to zero based numbering
       var yIndex = parseInt(coordinates.split('')[1]) -1;
 
       return [xIndex, yIndex];
+    },
+    //Returns an array of alphabetised letters with the length of the grid size
+    getValidXAxisLetters: function(){
+      return 'abcdefghijklmnopqrstuvwxyz'.split('').splice(0, this.gridSize);
     },
     //Takes the grid size and returns a regex that will match letters up to that
     //position in the alphabet
