@@ -59,7 +59,7 @@ describe('A one sided game of Battleships board that is responsible for creating
     expect(board.getPreviousShotDataForPosition(shotCoordinates)).toEqual(expectedHitData);
   });
 
-  it('Given an empty board. A check to see if a ship is at a given location should be false', function(){
+  it('Given an empty board. A check to see if a ship is at a given location should be undefined', function(){
     board.init();
 
     var coordinateToCheck = [0,5];
