@@ -2,6 +2,8 @@ var _ = require('underscore');
 var Ship = require('./ship.js');
 
 module.exports = function(gridSize, shipBlueprints){
+  'use strict';
+
   return{
     init: function(){
       this.gridSize = gridSize;

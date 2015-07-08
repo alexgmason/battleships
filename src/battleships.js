@@ -1,5 +1,7 @@
 var Game = require('./game.js');
 (function(){
+  'use strict';
+
   //Set up some constants for the game
   var BOARDSIZE = 10;
 

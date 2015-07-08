@@ -3,6 +3,8 @@ var stdio = require('stdio');
 var Board = require('./board.js');
 
 module.exports = function(gridSize, shipBlueprint){
+  'use strict';
+
   return {
     init: function(){
       this.gridSize = gridSize;
