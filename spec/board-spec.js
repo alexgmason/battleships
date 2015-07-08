@@ -64,10 +64,10 @@ describe('A one sided game of Battleships board that is responsible for creating
 
     var coordinateToCheck = [0,5];
     var shipIsAtPosition = board.checkIfShipIsAtPosition(coordinateToCheck);
-    expect(shipIsAtPosition).toEqual(false);
+    expect(shipIsAtPosition).toEqual(undefined);
   });
 
-  it('Given a ship positioned on the board, then given a coordinate at that ships location. A check to see if a ship is at that location should be true', function(){
+  it('Given a ship positioned on the board, then given a coordinate at that ships location. A check to see if a ship is at that location should return that ship', function(){
     board.init();
 
     while(!coordinates){
@@ -80,7 +80,7 @@ describe('A one sided game of Battleships board that is responsible for creating
 
     var coordinateToCheck = coordinates[0];
     var shipIsAtPosition = board.checkIfShipIsAtPosition(coordinateToCheck);
-    expect(shipIsAtPosition).toEqual(true);
+    expect(shipIsAtPosition).toEqual(board.ships[0]);
   });
 
   it('Returns random orientation in a valid format', function(){
