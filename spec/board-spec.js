@@ -17,19 +17,18 @@ describe('A one sided game of Battleships board that is responsible for creating
     board = new Board(GRIDSIZE, shipBlueprint).init();
   });
 
-  it('Given a ship blueprint, should add instantiate the ship and add it to the ships array', function(){
+  it('Given a ship blueprint, should instantiate the ship and add it to the ships array', function(){
     expect(board.ships.length).toEqual(1);
     board.addNewShip(shipBlueprint);
     expect(board.ships.length).toEqual(2);
   });
 
-  it('Should position a given ship. By returning an array of coordinates of passed in size', function(){
+  it('Should position a given ship. and return an array of coordinates of passed in size', function(){
     while(!coordinates){
       coordinates = board.attemptToPositionShip(SHIPSIZE);
     }
     expect(coordinates.length).toEqual(SHIPSIZE);
   });
-
 
   it('Given an empty board and a shot at a specific location, that same position should return the correct shot data', function(){
     var shotCoordinates = [3, 4];
@@ -41,6 +40,11 @@ describe('A one sided game of Battleships board that is responsible for creating
     board.recordShot(shotCoordinates);
 
     expect(board.getPreviousShotDataForPosition(shotCoordinates)).toEqual(expectedHitData);
+  });
+  it('A recorded shot should be added to the shots array', function(){
+    var existingShots = board.shots.length;
+    board.recordShot([1, 0]);
+    expect(board.shots.length).toEqual(existingShots + 1);
   });
 
   it('Given a ship placed on the board and a shot recorded at that position, given that same position should return the correct shot data', function(){
