@@ -4,7 +4,7 @@
   "description": "A little command line battleships game",
   "main": "src/battleships.js",
   "scripts": {
-    "test": "test"
+    "test": "jasmine"
   },
   "author": "Alexander Mason",
   "license": "ISC",
