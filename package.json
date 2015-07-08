@@ -18,7 +18,6 @@
     "jshint-stylish": "^2.0.1"
   },
   "dependencies": {
-    "codeclimate-test-reporter": "^0.1.0",
     "stdio": "^0.2.7",
     "underscore": "^1.8.3"
   }

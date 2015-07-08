@@ -5,4 +5,4 @@ addons:
   code_climate:
     repo_token: 9db7d54a54dec6e32e6ea3aedc47a889c690b8e84a5a85c515f1edea5f906f92
 after_script:
-  istanbul cover jasmine-node --captureExceptions spec/ && codeclimate-test-reporter < ./coverage/lcov.info 
+  istanbul cover jasmine-node --captureExceptions spec/ && codeclimate <./coverage/lcov.info 
