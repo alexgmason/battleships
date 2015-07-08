@@ -14,21 +14,19 @@ describe('A ship', function(){
     ship = new Ship(shipData).init();
   });
 
-  it('should increase it\'s hit count by one each time it is hit', function(){
+  it('Should increase it\'s hit count by one each time it is hit', function(){
     ship.recordDamage();
     expect(ship.hitCount).toEqual(1);
   });
 
-  it('should set sunk to true when the ship is sunk', function(){
+  it('Should set sunk to true when the ship is sunk', function(){
     ship.sinkShip();
     expect(ship.sunk).toBeTruthy();
   });
-  it('should sink when the hitcounter is equal to the size of the ship', function(){
+  it('Should sink when the hitcounter is equal to the size of the ship', function(){
     for(var i = 0; i < ship.size; i++){
       ship.recordDamage();
     }
     expect(ship.sunk).toBeTruthy();
   });
-
-
 });

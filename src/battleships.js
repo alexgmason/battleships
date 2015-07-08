@@ -1,3 +1,5 @@
+#!/bin/env node
+
 var Game = require('./game.js');
 (function(){
   'use strict';
