@@ -78,13 +78,4 @@ describe('A one sided game of Battleships game object', function(){
     expect(game.checkInputtedCoordinatesAreValid(GRIDREFERENCE)).toBe(false);
   });
 
-  it('Should continue the game when every ship has NOT been sunk', function(){
-    expect(game.checkForEndOfGame()).toEqual(false);
-  });
-
-  it('Should end the game when every ship has been sunk', function(){
-    game.board.ships[0].sunk = true;
-    expect(game.checkForEndOfGame()).toEqual(true);
-  });
-
 });

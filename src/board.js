@@ -9,6 +9,8 @@ module.exports = function(gridSize, shipBlueprints){
       this.gridSize = gridSize;
       this.ships = [];
       this.shots = [];
+      this.invalidShots = 0;
+      this.allShipsSunk = false;
 
       //Add the ships
       for(var i = 0; i < shipBlueprints.length; i++){
@@ -67,6 +69,36 @@ module.exports = function(gridSize, shipBlueprints){
         }
       }
     },
+    fire: function(coordinates){
+      //Returns undefined if no data
+      var previousShot = this.getPreviousShotDataForPosition(coordinates);
+      var shipAtPosition = this.getShipAtPosition(coordinates);
+
+      if(previousShot){
+        if(previousShot.hit === true){
+          if(shipAtPosition.sunk === true){
+            console.log('You already sunk a ' + shipAtPosition.type + ' at this postion');
+          }
+          else{
+            console.log('You already fired on this location. The shot was a hit!');
+          }
+        }
+        else if(previousShot.hit === false){
+          console.log('You already fired on this location. The shot was a miss!');
+        }
+        this.invalidShots++;
+      }
+      else {
+        if(shipAtPosition){
+          console.log('HIT!');
+          shipAtPosition.recordDamage(coordinates);
+        }
+        else{
+          console.log('Splash... You miss!');
+        }
+        this.recordShot(coordinates, shipAtPosition);
+      }
+    },
     //Looks up a coordinate in the shot history array and returns the previous
     //shot data for that position.
     getPreviousShotDataForPosition: function(coordinates){
@@ -103,5 +135,10 @@ module.exports = function(gridSize, shipBlueprints){
         });
       });
     },
+    checkAllShipsSunk: function(){
+      return _.every(this.ships, function(ship){
+        return ship.sunk === true;
+      });
+    }
   };
 };

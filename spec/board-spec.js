@@ -30,6 +30,39 @@ describe('A one sided game of Battleships board that is responsible for creating
     expect(coordinates.length).toEqual(SHIPSIZE);
   });
 
+  it('Should increment the invalidShots counter when a position that was a miss was previously fired upon', function(){
+    board.fire([3,0]);
+    expect(board.invalidShots).toBe(0);
+    board.fire([3,0]);
+    expect(board.invalidShots).toBe(1);
+  });
+
+  it('Should increment the invalidShots counter when a position that was a miss was previously fired upon', function(){
+    var shotCoordinates = board.ships[0].coordinates[0];
+    board.fire(shotCoordinates);
+    expect(board.invalidShots).toBe(0);
+    board.fire(shotCoordinates);
+    expect(board.invalidShots).toBe(1);
+  });
+
+  it('Should increment the length of the shots array when an empty position is fired upon for the first time', function(){
+    var shotCoordinates = board.ships[0].coordinates[0];
+    board.fire(shotCoordinates);
+    expect(board.shots.length).toBe(1);
+  });
+
+  it('Should increment the length of the shots array when a position with a ship is fired upon for the first time', function(){
+    var shotCoordinates = board.ships[0].coordinates[0];
+    board.fire(shotCoordinates);
+    expect(board.shots.length).toBe(1);
+  });
+
+  it('Should record damage to a ship when that postion is fired upon for the first time', function(){
+    var shotCoordinates = board.ships[0].coordinates[0];
+    board.fire(shotCoordinates);
+    expect(board.ships[0].hitCount).toBe(1);
+  });
+
   it('Given an empty board and a shot at a specific location, that same position should return the correct shot data', function(){
     var shotCoordinates = [3, 4];
     var expectedHitData = {
@@ -48,7 +81,7 @@ describe('A one sided game of Battleships board that is responsible for creating
   });
 
   it('Given a ship placed on the board and a shot recorded at that position, given that same position should return the correct shot data', function(){
-    shotCoordinates = board.ships[0].coordinates[0];
+    var shotCoordinates = board.ships[0].coordinates[0];
     var expectedHitData = {
       coordinates: shotCoordinates,
       hit: true
@@ -100,5 +133,14 @@ describe('A one sided game of Battleships board that is responsible for creating
 
     expect(firstCoordinateIsLessThanEqualToGridSize).toBeTruthy();
     expect(secondCoordinateIsLessThanEqualToGridSize).toBeTruthy();
+  });
+
+  it('Given a grid where ships have not been sunk. Checking that all ships are sunk should be false', function(){
+    expect(board.checkAllShipsSunk()).toEqual(false);
+  });
+
+  it('Given a grid where ships have been sunk. Checking that all ships are sunk should be false', function(){
+    board.ships[0].sunk = true;
+    expect(board.checkAllShipsSunk()).toEqual(true);
   });
 });

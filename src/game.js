@@ -81,7 +81,15 @@ module.exports = function(gridSize, shipBlueprint){
 
         if(this.checkInputtedCoordinatesAreValid(input)){
           indexedCoordinates = this.convertCoordinatesToIndex(input);
-          this.fire(indexedCoordinates);
+
+          this.board.fire(indexedCoordinates);
+
+          if(board.checkAllShipsSunk()){
+            console.log('You Win!!! You have sunk all the enemy ships!\n' +
+                        'It took you' + this.shots.length + ' attempts');
+            this.exitGame();
+          }
+          this.requestShot();
         }
         else{
           console.log('Your coordinates were invalid!\n' +
@@ -90,45 +98,5 @@ module.exports = function(gridSize, shipBlueprint){
         }
       }.bind(this));
     },
-    fire: function(coordinates){
-      //Returns false if no data
-      var previousShot = this.board.getPreviousShotDataForPosition(coordinates);
-      var shipAtPosition = this.board.getShipAtPosition(coordinates);
-
-      if(previousShot){
-        if(previousShot.hit === true){
-          if(shipAtPosition.sunk === true){
-            console.log('You already sunk a ' + shipAtPosition.type + ' at this postion');
-          }
-          else{
-            console.log('You already fired on this location. The shot was a hit!');
-          }
-        }
-        else if(previousShot.hit === false){
-          console.log('You already fired on this location. The shot was a miss!');
-        }
-        return this.requestShot();
-      }
-
-      if(shipAtPosition){
-        console.log('HIT!');
-        shipAtPosition.recordDamage(coordinates);
-
-        if(this.checkForEndOfGame()){
-          console.log('You Win!!! You have sunk all the enemy ships! It took you' + this.board.shots.length + ' attempts');
-          this.exitGame();
-        }
-      }
-      else{
-        console.log('Splash... You miss!');
-      }
-      this.board.recordShot(coordinates, shipAtPosition);
-      return this.requestShot();
-    },
-    checkForEndOfGame: function(){
-      return _.every(this.board.ships, function(ship){
-        return ship.sunk === true;
-      });
-    }
   };
 };
