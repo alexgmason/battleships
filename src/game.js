@@ -44,7 +44,6 @@ module.exports = function(gridSize, shipBlueprint){
     },
     validatePlayerCoordinates: function(coordinates){
       var letterRegex = this.getCoordinatesLetterRegex();
-
       //Coordinates must either be two or three characters long
       if(coordinates.length < 2 ||coordinates.length > 3){
         return false;

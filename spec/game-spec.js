@@ -40,7 +40,7 @@ describe('A one sided game of Battleships game object', function(){
     expect(game.getValidXAxisLetters()).toEqual(expectedArray);
   });
 
-  it('Should return a regex that matchtes valid letters', function(){
+  it('Should return a regex that matches only valid letters', function(){
     var expectedRegex = /[a-j]/i;
     expect(game.getCoordinatesLetterRegex()).toEqual(expectedRegex);
   });

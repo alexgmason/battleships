@@ -23,6 +23,7 @@ describe('A ship', function(){
     ship.sinkShip();
     expect(ship.sunk).toBeTruthy();
   });
+  
   it('Should sink when the hitcounter is equal to the size of the ship', function(){
     for(var i = 0; i < ship.size; i++){
       ship.recordDamage();
