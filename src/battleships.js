@@ -6,7 +6,6 @@ var Game = require('./game.js');
 
   //Set up some constants for the game
   var BOARDSIZE = 10;
-
   var SHIPS = [
     {
       'type': 'Battleship',
@@ -24,5 +23,6 @@ var Game = require('./game.js');
 
   var game = new Game(BOARDSIZE, SHIPS).init();
 
+  //Request the first shot from the player
   game.requestShot();
 })();

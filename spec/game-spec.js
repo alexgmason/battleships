@@ -47,42 +47,42 @@ describe('A one sided game of Battleships game object', function(){
 
   it('Should accept valid grid references, with one letter and one number', function(){
     var GRIDREFERENCE = 'B1';
-    expect(game.checkInputtedCoordinatesAreValid(GRIDREFERENCE)).toBe(true);
+    expect(game.validatePlayerCoordinates(GRIDREFERENCE)).toBe(true);
   });
 
   it('Should accept valid grid references, with one letter and two numbers, where that number is 10', function(){
     var GRIDREFERENCE = 'B10';
-    expect(game.checkInputtedCoordinatesAreValid(GRIDREFERENCE)).toBe(true);
+    expect(game.validatePlayerCoordinates(GRIDREFERENCE)).toBe(true);
   });
 
   it('Should reject invalid grid references, with two letters', function(){
     var GRIDREFERENCE = 'BB';
-    expect(game.checkInputtedCoordinatesAreValid(GRIDREFERENCE)).toBe(false);
+    expect(game.validatePlayerCoordinates(GRIDREFERENCE)).toBe(false);
   });
 
   it('Should reject invalid grid references, with two numbers', function(){
     var GRIDREFERENCE = '11';
-    expect(game.checkInputtedCoordinatesAreValid(GRIDREFERENCE)).toBe(false);
+    expect(game.validatePlayerCoordinates(GRIDREFERENCE)).toBe(false);
   });
 
   it('Should reject invalid grid references, with two letters and one number', function(){
     var GRIDREFERENCE = 'BB1';
-    expect(game.checkInputtedCoordinatesAreValid(GRIDREFERENCE)).toBe(false);
+    expect(game.validatePlayerCoordinates(GRIDREFERENCE)).toBe(false);
   });
 
   it('Should reject invalid grid references, with one letter and one number, where that number is 0', function(){
     var GRIDREFERENCE = 'B0';
-    expect(game.checkInputtedCoordinatesAreValid(GRIDREFERENCE)).toBe(false);
+    expect(game.validatePlayerCoordinates(GRIDREFERENCE)).toBe(false);
   });
 
   it('Should reject invalid grid references, with a letter that positioned within the alphabet, falls outside the valid character range', function(){
     var GRIDREFERENCE = 'K1';
-    expect(game.checkInputtedCoordinatesAreValid(GRIDREFERENCE)).toBe(false);
+    expect(game.validatePlayerCoordinates(GRIDREFERENCE)).toBe(false);
   });
 
   it('Should reject invalid grid references, with one letter and two numbers, where that number is larger than 10', function(){
     var GRIDREFERENCE = 'B11';
-    expect(game.checkInputtedCoordinatesAreValid(GRIDREFERENCE)).toBe(false);
+    expect(game.validatePlayerCoordinates(GRIDREFERENCE)).toBe(false);
   });
 
 });

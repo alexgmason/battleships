@@ -17,9 +17,10 @@ module.exports = function(gridSize, shipBlueprint){
       var yIndex;
       var xValue = coordinates.split('')[0].toLowerCase();
       var xIndex = parseInt(this.getValidXAxisLetters().indexOf(xValue));
-      //Subtract one as we want to convert to zero based numbering
+
 
       if(coordinates.length === 2){
+        //Subtract one as we want to convert to zero based numbering
         yIndex = parseInt(coordinates.split('')[1]) -1;
       }
       //Can only be 9.
@@ -41,29 +42,31 @@ module.exports = function(gridSize, shipBlueprint){
 
       return new RegExp('[a-' + letterLimit + ']', 'i');
     },
-    checkInputtedCoordinatesAreValid: function(coordinates){
+    validatePlayerCoordinates: function(coordinates){
       var letterRegex = this.getCoordinatesLetterRegex();
 
-      //Check that the inputted coordinate is either two or three characters long
-      if(!(coordinates.length >= 2 && coordinates.length <= 3)){
+      //Coordinates must either be two or three characters long
+      if(coordinates.length < 2 ||coordinates.length > 3){
         return false;
       }
-      //Check first character is a letter
-      else if (!coordinates.charAt(0).match(letterRegex)) {
+
+      //First character must always be a letter
+      if (!coordinates.charAt(0).match(letterRegex)) {
         return false;
       }
-      //Check second character is a number
-      else if (isNaN(coordinates.charAt(1))){
+
+      //Second character is a number
+      if (isNaN(coordinates.charAt(1))){
         return false;
       }
       //Check the second character isn't '0', which is an invalid number as our
-      //grid goes 0-10
+      //grid goes 1-10
       else if(parseInt(coordinates.charAt(1)) === 0){
         return false;
       }
 
       //If there is a third character. For example 'A10' then test that too
-      //Only Valid character is 0;
+      //Only valid character is 0;
       if(coordinates.length === 3){
         if(parseInt(coordinates.charAt(2)) !== 0){
           return false;
@@ -86,7 +89,7 @@ module.exports = function(gridSize, shipBlueprint){
           this.exitGame();
         }
 
-        if(this.checkInputtedCoordinatesAreValid(input)){
+        if(this.validatePlayerCoordinates(input)){
           indexedCoordinates = this.convertCoordinatesToIndex(input);
 
           this.board.fire(indexedCoordinates);
