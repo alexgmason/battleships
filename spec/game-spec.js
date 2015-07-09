@@ -85,4 +85,9 @@ describe('A one sided game of Battleships game object', function(){
     expect(game.validatePlayerCoordinates(GRIDREFERENCE)).toBe(false);
   });
 
+  it('Should reject invalid grid references, with one letter and two numbers, where that number is larger than 10 and the first diget is larger than one', function(){
+    var GRIDREFERENCE = 'A20';
+    expect(game.validatePlayerCoordinates(GRIDREFERENCE)).toBe(false);
+  });
+
 });
