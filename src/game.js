@@ -1,4 +1,3 @@
-var _ = require('underscore');
 var stdio = require('stdio');
 var Board = require('./board.js');
 
