@@ -15,10 +15,18 @@ module.exports = function(gridSize, shipBlueprint){
     //Converts the users inputted coordinates that are in a traditional battleship 'A1'
     //Format into the indexes of an array.
     convertCoordinatesToIndex: function(coordinates){
+      var yIndex;
       var xValue = coordinates.split('')[0].toLowerCase();
       var xIndex = parseInt(this.getValidXAxisLetters().indexOf(xValue));
       //Subtract one as we want to convert to zero based numbering
-      var yIndex = parseInt(coordinates.split('')[1]) -1;
+
+      if(coordinates.length === 2){
+        yIndex = parseInt(coordinates.split('')[1]) -1;
+      }
+      //Can only be 9.
+      else if(coordinates.length === 3){
+        yIndex = 9;
+      }
 
       return [xIndex, yIndex];
     },
@@ -84,7 +92,7 @@ module.exports = function(gridSize, shipBlueprint){
 
           this.board.fire(indexedCoordinates);
 
-          if(board.checkAllShipsSunk()){
+          if(this.board.checkAllShipsSunk()){
             console.log('You Win!!! You have sunk all the enemy ships!\n' +
                         'It took you' + this.shots.length + ' attempts');
             this.exitGame();

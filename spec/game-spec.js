@@ -28,6 +28,13 @@ describe('A one sided game of Battleships game object', function(){
     expect(convertedCoordinates).toEqual([2,0]);
   });
 
+  it('Should convert an alphanumeric coordinates where the yaxis value is 10 into an array of integers indexed zero', function(){
+    var coordinates = 'C10';
+    var convertedCoordinates = game.convertCoordinatesToIndex(coordinates);
+
+    expect(convertedCoordinates).toEqual([2,9]);
+  });
+
   it('Should return an array of alphabetised letters of the length of grid size', function(){
     var expectedArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g' ,'h', 'i', 'j'];
     expect(game.getValidXAxisLetters()).toEqual(expectedArray);
