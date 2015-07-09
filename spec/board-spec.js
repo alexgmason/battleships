@@ -93,8 +93,6 @@ describe('A one sided game of Battleships board that is responsible for creating
   });
 
   it('Given an empty board. A check to see if a ship is at a given location should be undefined', function(){
-    board.init();
-
     var coordinateToCheck = [0,5];
     var shipIsAtPosition = board.getShipAtPosition(coordinateToCheck);
     expect(shipIsAtPosition).toEqual(undefined);
