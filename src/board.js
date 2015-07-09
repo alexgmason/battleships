@@ -19,7 +19,7 @@ module.exports = function(gridSize, shipBlueprints){
       return this;
     },
     addNewShip: function(shipBlueprint){
-      //Attempt to postion a ship on the grid. the 'attemtToPositionShip' returns
+      //Attempt to postion a ship on the grid.'attemtToPositionShip' returns
       //False if a ship could not be placed. It returns the ship coordinates if
       //it was successfully placed
       while(!shipBlueprint.coordinates){
@@ -52,11 +52,11 @@ module.exports = function(gridSize, shipBlueprints){
       }
       else if(orientation === 'vertical'){
         //If the distance between the start position and the edge of the grid is
-        // larger than the ship can accomodate
+        //larger than the ship can accomodate
         if(startLocation[1] + size > this.gridSize){
           return false;
         }
-        //else we are going to check each intended position for clash with another ship!
+        //else we are going to check each position for another ship!
         else{
           for(var j = 0; j < size; j++){
             if(this.getShipAtPosition([startLocation[0], startLocation[1] + j])){
@@ -74,6 +74,7 @@ module.exports = function(gridSize, shipBlueprints){
       var previousShot = this.getPreviousShotDataForPosition(coordinates);
       var shipAtPosition = this.getShipAtPosition(coordinates);
 
+      //There was a previous shot at this position
       if(previousShot){
         if(previousShot.hit === true){
           if(shipAtPosition.sunk === true){
@@ -88,6 +89,7 @@ module.exports = function(gridSize, shipBlueprints){
         }
         this.invalidShots++;
       }
+      //This is the first time a shot has been fired at this position
       else {
         if(shipAtPosition){
           console.log('HIT!');
@@ -103,6 +105,7 @@ module.exports = function(gridSize, shipBlueprints){
     //shot data for that position.
     getPreviousShotDataForPosition: function(coordinates){
       return _.find(this.shots, function(shot){
+        //Here we are checking for equality in both arrays
         return _.isEqual(shot.coordinates, coordinates);
       });
     },

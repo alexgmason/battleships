@@ -11,6 +11,9 @@ module.exports = function(shipData){
 
       return this;
     },
+    //Increase the ships hit counter when hit.
+    //Note we do not record the shot location as a simple comparison of the
+    //hit counter and the ships size will suffice.
     recordDamage: function(){
       this.hitCount++;
 

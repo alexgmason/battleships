@@ -96,9 +96,11 @@ module.exports = function(gridSize, shipBlueprint){
 
           if(this.board.checkAllShipsSunk()){
             console.log('You Win!!! You have sunk all the enemy ships!\n' +
-                        'It took you' + this.shots.length + ' attempts');
+                        'It took you ' + this.board.shots.length + ' attempts');
             this.exitGame();
           }
+
+          //Request another shot from the users
           this.requestShot();
         }
         else{
